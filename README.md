@@ -36,7 +36,7 @@ You can copy the headers directly into your project and add them as direct refer
 ## Usage
 
 ```objectivec
-#import "Openpay.h" - Tokenizing methods
+#import "Openpay.h"
 ```
 
 #### Create a instance object
