@@ -338,7 +338,7 @@
 				ORGANIZATIONNAME = "Openpay S.A.P.I. de C.V.";
 				TargetAttributes = {
 					90F8ED801958A81E00795E61 = {
-						TestTargetID = 90F8EDE21959006E00795E61;
+						TestTargetID = 90F8ED701958A81E00795E61;
 					};
 					90F8EDE21959006E00795E61 = {
 						SystemCapabilities = {
@@ -600,7 +600,6 @@
 		90F8ED981958A81E00795E61 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/OpenpayExample.app/OpenpayExample";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -614,7 +613,6 @@
 				);
 				INFOPLIST_FILE = "OpenpayTests/OpenpayTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
@@ -622,7 +620,6 @@
 		90F8ED991958A81E00795E61 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/OpenpayExample.app/OpenpayExample";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -632,7 +629,6 @@
 				GCC_PREFIX_HEADER = "Openpay/Openpay-Prefix.pch";
 				INFOPLIST_FILE = "OpenpayTests/OpenpayTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;

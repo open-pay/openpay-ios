@@ -18,21 +18,21 @@
     NSString *cardNumber = @"41111111111111111";
     OPCard *card = [[OPCard alloc] init];
     card.number = cardNumber;
-    XCTAssertTrue(card.type==OPCardTypeVisa, @"Card type should be %@ but was %lu", @"Visa", card.type);
+    XCTAssertTrue(card.type==OPCardTypeVisa, @"Card type should be %@ but was %u", @"Visa", card.type);
 }
 
 - (void)testMastercardCardType {
     NSString *cardNumber = @"5105105105105100";
     OPCard *card = [[OPCard alloc] init];
     card.number = cardNumber;
-    XCTAssertTrue(card.type==OPCardTypeMastercard, @"Card type should be %@ but was %lu", @"Mastercard", card.type);
+    XCTAssertTrue(card.type==OPCardTypeMastercard, @"Card type should be %@ but was %u", @"Mastercard", card.type);
 }
 
 - (void)testAmericanExpressCardType {
     NSString *cardNumber = @"341111111111111";
     OPCard *card = [[OPCard alloc] init];
     card.number = cardNumber;
-    XCTAssertTrue(card.type==OPCardTypeAmericanExpress, @"Card type should be %@ but was %lu", @"American Express", card.type);
+    XCTAssertTrue(card.type==OPCardTypeAmericanExpress, @"Card type should be %@ but was %u", @"American Express", card.type);
 }
 
 // Test card numbers
@@ -120,8 +120,8 @@
     NSDateComponents *components = [[NSCalendar currentCalendar] components:NSMonthCalendarUnit | NSYearCalendarUnit fromDate:[NSDate date]];
     OPCard *card = [[OPCard alloc] init];
     card.number = @"4111111111111111";
-    card.expirationMonth = [NSString stringWithFormat: @"%ld", components.month + 1];
-    card.expirationYear = [NSString stringWithFormat:@"%ld", components.year];
+    card.expirationMonth = [NSString stringWithFormat: @"%d", components.month + 1];
+    card.expirationYear = [NSString stringWithFormat:@"%d", components.year];
     XCTAssertFalse(card.expired, @"Card should not be expired");
 }
 
@@ -129,7 +129,7 @@
     NSDateComponents *components = [[NSCalendar currentCalendar] components:NSMonthCalendarUnit | NSYearCalendarUnit fromDate:[NSDate date]];
     OPCard *card = [[OPCard alloc] init];
     card.number = @"4111111111111111";
-    card.expirationMonth = [NSString stringWithFormat: @"%ld", components.month - 1];
+    card.expirationMonth = [NSString stringWithFormat: @"%d", components.month - 1];
     card.expirationYear = [NSString stringWithFormat:@"%ld", (long)components.year];
     XCTAssertTrue(card.expired, @"Card should be expired");
 }
@@ -139,7 +139,7 @@
     OPCard *card = [[OPCard alloc] init];
     card.number = @"4111111111111111";
     card.expirationMonth = @"08";
-    card.expirationYear = [NSString stringWithFormat:@"%ld", components.year - 1];
+    card.expirationYear = [NSString stringWithFormat:@"%d", components.year - 1];
     XCTAssertTrue(card.expired, @"Card should be expired");
 }
 

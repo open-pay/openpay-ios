@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "90F8ED701958A81E00795E61"
-               BuildableName = "libOpenpay.a"
-               BlueprintName = "Openpay"
+               BlueprintIdentifier = "907129FE195A46CA00EB5D24"
+               BuildableName = "openpay"
+               BlueprintName = "openpay"
                ReferencedContainer = "container:Openpay.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
