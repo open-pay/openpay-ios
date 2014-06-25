@@ -1,6 +1,8 @@
 openpay-ios
 ===========
 
+![openpaylogo](http://www.openpay.mx/img/logo-small.png)
+
 iOS library for tokenizing credit/debit card and collect device information
 
 Current version : 1.0
