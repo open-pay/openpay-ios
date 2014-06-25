@@ -16,7 +16,7 @@ Please refer to the following documentation sections for field documentation:
 
 ## Installation
 
-- [Download the pre-built library](https://github.com/balanced/balanced-ios/releases/1.0).
+- [Download the pre-built library](https://github.com/open-pay/openpay-ios/releases).
 - Add openpay.a to your project and to Build Phases -> Link Binary With Libraries.
 - Add CoreLocation.framework to Build Phases -> Link Binary With Libraries.
 
@@ -31,7 +31,7 @@ If you copy the files to a location other than includes you'll probably need to 
 
 ##### Direct copy
 You can copy the headers directly into your project and add them as direct references.
-- Drag the contents of 'include' to your project (select copy if needed)
+- Drag the contents of 'include' folder to your project (select copy if needed)
 
 ## Usage
 
@@ -41,17 +41,30 @@ You can copy the headers directly into your project and add them as direct refer
 
 #### Create a instance object
 
-Instantiate a openpay instance. Openpay instances need:
+For create an instance Openpay needs:
 - MerchantId
 - Public API Key
 
 ```objectivec
-Openpay *openpay = [[Openpay alloc] initWithMerchantId:MERCHANT_ID apyKey:API_KEY isProductionMode:NO];
+Openpay *openpay = [[Openpay alloc] initWithMerchantId:MERCHANT_ID 
+                                                apyKey:API_KEY
+                                      isProductionMode:NO];
 ```
+
+#### Production Mode
+
+Use isProductionMode = YES
+
+```objectivec
+Openpay *openpay = [[Openpay alloc] initWithMerchantId:MERCHANT_ID 
+                                                apyKey:API_KEY
+                                      isProductionMode:YES];
+```
+
 
 #### Create a token
 
-For more information about how to create a token, please refer to [documentation] (http://www.openpay.mx/docs/api/#crear-un-nuevo-token) 
+For more information about how to create a token, please refer to [Create a token] (http://www.openpay.mx/docs/api/#crear-un-nuevo-token) 
 
 ##### With only required fields
 
@@ -63,19 +76,20 @@ card.expirationMonth = @"08";
 card.expirationYear = @"19";
 card.cvv2 = @"132";
 
-Openpay *openpay = [[Openpay alloc] initWithMerchantId:MERCHANT_ID apyKey:API_KEY isProductionMode:NO];
-
+Openpay *openpay = [[Openpay alloc] initWithMerchantId:MERCHANT_ID 
+                                                apyKey:API_KEY
+                                      isProductionMode:NO];
 [openpay createTokenWithCard:card
                      success:^(OPToken *token) {
                                
                    } failure:^(NSError *error) {
-    
+   
 }];
 ```
 
 ##### Response
 
-If the request is correct, return a instance of OPToken. It contains the 'id" 
+If the request is correct, return an instance of OPToken.
 
 
 ## Contributing
