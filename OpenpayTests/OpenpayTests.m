@@ -83,6 +83,7 @@
     card.holderName = @"Juan Perez Ramirez";
     card.expirationYear = @"19";
     card.expirationMonth  = @"12";
+    card.cvv2 = @"123";
     
     OPAddress* address = [[OPAddress alloc] init];
     address.city = @"Querétaro";
