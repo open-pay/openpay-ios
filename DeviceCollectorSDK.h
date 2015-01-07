@@ -1,14 +1,14 @@
 /**
  * @abstract Device Collector SDK for iOS
- * @discussion This SDK is used to implement the Dvice Collector in your 
+ * @discussion This SDK is used to implement the Dvice Collector in your
  * application.  Please read through all the documentation before implementing.
  *
  * Copyright (c) 2012-2013 Kount. All rights reserved.
  */
 
 /**
- * @warning *Important* Your application must link with the *UIKit*, 
- * *SystemConfiguration*, *AdSupport* and *CoreLocation* frameworks to use the 
+ * @warning *Important* Your application must link with the *UIKit*,
+ * *SystemConfiguration*, *AdSupport* and *CoreLocation* frameworks to use the
  * SDK successfully.
  */
 #import <UIKit/UIKit.h>
@@ -45,9 +45,9 @@
 // Geo Location Collector
 #define DC_COLLECTOR_GEO_LOCATION   @"COLLECTOR_GEO_LOCATION"
 
-/** 
+/**
  * @protocol DeviceCollectorSDKDelegate
- * @abstract Protocol which will provide status updates from a 
+ * @abstract Protocol which will provide status updates from a
  * DeviceCollectorSDK instance.
  *
  */
@@ -60,7 +60,7 @@
  * @result void
  */
 - (void) onCollectorStart;
-  
+
 /**
  * @method onCollectorSuccess
  * @abstract Notfication that the collector finished successfully.
@@ -105,7 +105,7 @@
 /**
  * @method setCollectorUrl
  * @abstract Set the URL that the Device Collector will use.
- * @discussion This is required PRIOR to calling: method 
+ * @discussion This is required PRIOR to calling: method
  * [DeviceCollectorSDK collect]
  * @param url Full URL to device collector 302-redirect page
  * @result void
@@ -115,7 +115,7 @@
 /**
  * @method setMerchantId
  * @abstract Set your Merchant Id.
- * @discussion This is required PRIOR to calling: method 
+ * @discussion This is required PRIOR to calling: method
  * [DeviceCollectorSDK collect]
  * @param merc Merchant Id
  * @result void
@@ -126,9 +126,9 @@
  * @method collect
  * @abstract Collect device information for the given session.
  * @discussion You must set the merchantID and collectorURL prior to
- * calling this method using [DeviceCollectorSDK setMerchantId] and 
- * [DeviceCollectorSDK setCollectorUrl]. Optionally you can set the delegate 
- * prior to calling collect if you want to get status updates: 
+ * calling this method using [DeviceCollectorSDK setMerchantId] and
+ * [DeviceCollectorSDK setCollectorUrl]. Optionally you can set the delegate
+ * prior to calling collect if you want to get status updates:
  * [DeviceCollectorSDK setDelegate]
  * @param sessionId Unique session id
  * @result void
@@ -137,7 +137,7 @@
 
 /**
  * @method setDelegate
- * @abstract Set a DeviceCollectorSDKDelegate to notify about collector 
+ * @abstract Set a DeviceCollectorSDKDelegate to notify about collector
  * events.
  *
  * @param delegate Object to notify

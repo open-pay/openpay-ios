@@ -58,7 +58,7 @@
             [self setActivityIndicatorEnabled:NO];
 
             NSMutableDictionary *mutableDictionary = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
-                                                      [NSString stringWithFormat:@"%d", [error code]], @"code",
+                                                      [NSString stringWithFormat:@"%ld", (long)[error code]], @"code",
                                                       [error userInfo], @"info", nil];
             [self.txtResponseView setTextColor:[UIColor redColor]];
             [self.txtResponseView setText:[mutableDictionary description]];
