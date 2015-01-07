@@ -21,6 +21,10 @@ Please refer to the following documentation sections for field documentation:
 - [Download the pre-built library](https://github.com/open-pay/openpay-ios/releases).
 - Add openpay.a to your project and to Build Phases -> Link Binary With Libraries.
 - Add CoreLocation.framework to Build Phases -> Link Binary With Libraries.
+- 
+
+### Modify the Info.plist
+Include the NSLocationWhenInUseUsageDescription key. This string value for this key can currently be empty, but Apple may require a description of why the location is needed in the future.
 
 #### Headers
 
