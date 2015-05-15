@@ -1,5 +1,4 @@
-openpay-ios
-===========
+![Openpay iOS](http://www.openpay.mx/img/github/ios.jpg)
 
 ![openpaylogo](http://www.openpay.mx/img/logo-small.png)
 
