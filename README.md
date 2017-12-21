@@ -26,8 +26,9 @@ Please refer to the following documentation sections for field documentation:
 
 - Copy all the .h files (Openpay.h, OPCard.h, OPAddress.h, OPToken.h) in the include folder of your project.
 
-*The includes folder is automatically included in the project's header search path.
-*If you copy the files to a location other than includes you'll probably need to add the path to User Header Search Paths in your project settings.
+*The includes folder is automatically included in the project's header search path.*
+
+*If you copy the files to a location other than includes you'll probably need to add the path to User Header Search Paths in your project settings.*
 
 ## Usage
 
