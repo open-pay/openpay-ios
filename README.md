@@ -1,8 +1,8 @@
 ![Openpay iOS](http://www.openpay.mx/img/github/ios.jpg)
 
-iOS library for tokenizing credit/debit card and collect device information
+iOS objective-c library for tokenizing credit/debit card and collect device information
 
-Current version : v1.2.0
+Current version: v2.0.0
 
 Looking for Swift Version? Checkout: (https://github.com/open-pay/openpay-swift-ios)
 
@@ -12,30 +12,22 @@ Please refer to the following documentation sections for field documentation:
 
 ## Requirements
 
+- iOS SDK 9.3+
 - ARC
-- CoreLocation.framework
+- WebKit.framework
 
 ## Installation
 
-- Download the latest released version.
-- Add openpay library to your project and to Build Phases -> Link Binary With Libraries.
-- Add CoreLocation.framework to Build Phases -> Link Binary With Libraries.
+- Download the latest released version (SDK-v2.0.0.zip).
+- Add openpay library (openpay-v2.0.0.a) to your project and to Build Phases -> Link Binary With Libraries.
+- Add WebKit.framework to Build Phases -> Link Binary With Libraries.
 
-### Modify the Info.plist
-Include the NSLocationWhenInUseUsageDescription key. This string value for this key can currently be empty, but Apple may require a description of why the location is needed in the future.
+## Headers
 
-#### Headers
+- Copy all the .h files (Openpay.h, OPCard.h, OPAddress.h, OPToken.h) in the include folder of your project.
 
-##### includes folder
-The includes folder is automatically included in the project's header search path.
-
-- Copy the include folder to your project (or include/*.h to your existing include folder). Drag the folder to your project to add the references.
-
-If you copy the files to a location other than includes you'll probably need to add the path to User Header Search Paths in your project settings.
-
-##### Direct copy
-You can copy the headers directly into your project and add them as direct references.
-- Drag the contents of 'include' folder to your project (select copy if needed)
+*The includes folder is automatically included in the project's header search path.
+*If you copy the files to a location other than includes you'll probably need to add the path to User Header Search Paths in your project settings.
 
 ## Usage
 
@@ -94,11 +86,3 @@ Openpay *openpay = [[Openpay alloc] initWithMerchantId:MERCHANT_ID
 ##### Response
 
 If the request is correct, return an instance of OPToken.
-
-
-## Contributing
-
-
-#### Tests
-
-Please include tests with all new code. Also, all existing tests must pass before new code can be merged.
