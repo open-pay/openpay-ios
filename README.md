@@ -2,7 +2,7 @@
 
 iOS library for tokenizing credit/debit card and collect device information
 
-Current version : 1.0
+Current version : v1.2.0
 
 Looking for Swift Version? Checkout: (https://github.com/open-pay/openpay-swift-ios)
 
@@ -17,8 +17,8 @@ Please refer to the following documentation sections for field documentation:
 
 ## Installation
 
-- [Download the pre-built library](https://github.com/open-pay/openpay-ios/releases).
-- Add openpay.a to your project and to Build Phases -> Link Binary With Libraries.
+- Download the latest released version.
+- Add openpay library to your project and to Build Phases -> Link Binary With Libraries.
 - Add CoreLocation.framework to Build Phases -> Link Binary With Libraries.
 
 ### Modify the Info.plist
