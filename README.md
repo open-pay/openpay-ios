@@ -27,16 +27,27 @@ Please refer to the following documentation sections for field documentation:
 
 ## Headers
 
+#### Option A
+
 - Copy all the .h files (Openpay.h, OPCard.h, OPAddress.h, OPToken.h) in the include folder of your project.
 
 *The includes folder is automatically included in the project's header search path.*
 
 *If you copy the files to a location other than includes you'll probably need to add the path to User Header Search Paths in your project settings.*
 
+#### Option B
+
+- If the include folder does not exist, then you have to add the files to the project folder.
+  - Right click on the project folder and select the option "Add files to ..."
+  - In the popup, select the files (Openpay.h, OPCard.h, OPAddress.h, OPToken.h), check the option "Copy items if needed" and click "add"
+
 ## Usage
 
 ```objectivec
 #import "Openpay.h"
+
+#define MERCHANT_ID @"merchantId"
+#define API_KEY @"apiKey"
 ```
 
 #### Create a instance object
@@ -48,7 +59,9 @@ For create an instance Openpay needs:
 ```objectivec
 @property (nonatomic) Openpay *openpay;
 
-_openpay = [[Openpay alloc] initWithMerchantId:MERCHANT_ID apyKey:API_KEY isProductionMode:NO];
+- (void)myFunction {
+    _openpay = [[Openpay alloc] initWithMerchantId:MERCHANT_ID apyKey:API_KEY isProductionMode:NO];
+}
 ```
 
 #### Production Mode
@@ -58,7 +71,9 @@ Use isProductionMode = YES
 ```objectivec
 @property (nonatomic) Openpay *openpay;
 
-_openpay = [[Openpay alloc] initWithMerchantId:MERCHANT_ID apyKey:API_KEY isProductionMode:YES];
+- (void)myFunction {
+    _openpay = [[Openpay alloc] initWithMerchantId:MERCHANT_ID apyKey:API_KEY isProductionMode:YES];
+}
 ```
 
 #### Create a SessionID
@@ -68,8 +83,10 @@ The framework contains a function for generate a device sessionID.
 @property (nonatomic) Openpay *openpay;
 @property NSString *sessionId;
 
-_openpay = [[Openpay alloc] initWithMerchantId:MERCHANT_ID apyKey:API_KEY isProductionMode:YES];
-_sessionId = [_openpay createDeviceSessionId];
+- (void)myFunction {
+    _openpay = [[Openpay alloc] initWithMerchantId:MERCHANT_ID apyKey:API_KEY isProductionMode:NO];
+    _sessionId = [_openpay createDeviceSessionId];
+}
 ```
 
 #### Create a token
@@ -81,15 +98,17 @@ For more information about how to create a token, please refer to [Create a toke
 ```objectivec
 @property (nonatomic) Openpay *openpay;
 
-OPCard *card = [[OPCard alloc]init];
-card.holderName = @"Juan Escamilla";
-card.number = @"4111111111111111";
-card.expirationMonth = @"08";
-card.expirationYear = @"19";
-card.cvv2 = @"132";
-
-_openpay = [[Openpay alloc] initWithMerchantId:MERCHANT_ID apyKey:API_KEY isProductionMode:NO];
-[_openpay createTokenWithCard:card success:^(OPToken *token) {} failure:^(NSError *error) {}];
+- (void)myFunction {
+    OPCard *card = [[OPCard alloc]init];
+    card.holderName = @"Juan Escamilla";
+    card.number = @"4111111111111111";
+    card.expirationMonth = @"08";
+    card.expirationYear = @"19";
+    card.cvv2 = @"132";
+    
+    _openpay = [[Openpay alloc] initWithMerchantId:MERCHANT_ID apyKey:API_KEY isProductionMode:NO];
+    [_openpay createTokenWithCard:card success:^(OPToken *token) {} failure:^(NSError *error) {}];
+}
 ```
 
 ##### Response
