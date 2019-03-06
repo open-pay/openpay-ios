@@ -19,11 +19,14 @@ Please refer to the following documentation sections for field documentation:
 ## Installation
 
 - Download the latest released version (https://github.com/open-pay/openpay-ios/releases/download/v2.0.0/SDK-v2.0.0.zip).
-- Add openpay library (Openpay.a) to General -> Linked Framework and Libraries.
+- Add openpay library (Openpay.a)
+  - Go to General -> Linked Framework and Libraries
+  - Click "Add items"
   - In the popup, click "Add Other..." option
-  - Select the file "Openpay.a"
-- Add webkit framework to General -> Linked Framework and Libraries.
-  - Search for "WebKit.framework", select it and click "add"
+  - Select the file "Openpay.a" and click "Open"
+- Add webkit framework
+  - Go to General -> Linked Framework and Libraries
+  - Search for "WebKit.framework", select it and click "Add"
 
 ## Headers
 
@@ -110,7 +113,3 @@ For more information about how to create a token, please refer to [Create a toke
     [_openpay createTokenWithCard:card success:^(OPToken *token) {} failure:^(NSError *error) {}];
 }
 ```
-
-##### Response
-
-If the request is correct, return an instance of OPToken.
