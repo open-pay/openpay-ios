@@ -48,9 +48,6 @@ Please refer to the following documentation sections for field documentation:
 
 ```objectivec
 #import "Openpay.h"
-
-#define MERCHANT_ID @"merchantId"
-#define API_KEY @"apiKey"
 ```
 
 #### Create a instance object
@@ -60,6 +57,9 @@ For create an instance Openpay needs:
 - Public API Key
 
 ```objectivec
+#define MERCHANT_ID @"merchantId"
+#define API_KEY @"apiKey"
+
 @property (nonatomic) Openpay *openpay;
 
 - (void)myFunction {
