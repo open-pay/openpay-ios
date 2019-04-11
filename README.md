@@ -2,7 +2,7 @@
 
 iOS objective-c library for tokenizing credit/debit card and collect device information
 
-Current version: v2.0.0
+Current version: v2.0.1
 
 Looking for Swift Version? Checkout: (https://github.com/open-pay/openpay-swift-ios)
 
@@ -18,7 +18,7 @@ Please refer to the following documentation sections for field documentation:
 
 ## Installation
 
-- Download the latest released version (https://github.com/open-pay/openpay-ios/releases/download/v2.0.0/SDK-v2.0.0.zip).
+- Download the latest released version (https://github.com/open-pay/openpay-ios/releases/download/v2.0.1/SDK-v2.0.1.zip).
 - Add openpay library (Openpay.a)
   - Go to General -> Linked Framework and Libraries
   - Click "Add items"
@@ -113,3 +113,28 @@ For more information about how to create a token, please refer to [Create a toke
     [_openpay createTokenWithCard:card success:^(OPToken *token) {} failure:^(NSError *error) {}];
 }
 ```
+
+## Remove Unused Architectures (for production only)
+
+The universal library will run on both simulators and devices. But there is a problem, Apple doesn’t allow to upload the application with unused architectures to the App Store.
+
+Please make sure that you have "Remove Unused Architectures Script" added in your project while releasing your app to App Store.
+
+- Select the Project -> Choose Target -> Project Name -> Select Build Phases -> Press "+" -> New Run Script Phase -> Name the script as "Remove Unused Architectures Script".
+
+```javascript
+FRAMEWORK="Openpay"
+FRAMEWORK_EXECUTABLE_PATH="${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/$FRAMEWORK.a/$FRAMEWORK"
+EXTRACTED_ARCHS=()
+for ARCH in $ARCHS
+do
+lipo -extract "$ARCH" "$FRAMEWORK_EXECUTABLE_PATH" -o "$FRAMEWORK_EXECUTABLE_PATH-$ARCH"
+EXTRACTED_ARCHS+=("$FRAMEWORK_EXECUTABLE_PATH-$ARCH")
+done
+lipo -o "$FRAMEWORK_EXECUTABLE_PATH-merged" -create "${EXTRACTED_ARCHS[@]}"
+rm "${EXTRACTED_ARCHS[@]}"
+rm "$FRAMEWORK_EXECUTABLE_PATH"
+mv "$FRAMEWORK_EXECUTABLE_PATH-merged" "$FRAMEWORK_EXECUTABLE_PATH"
+```
+
+Thats all !. This run script removes the unused simulator architectures only while pushing the application to the App Store.
