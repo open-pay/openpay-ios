@@ -1,5 +1,8 @@
 ![Openpay iOS](http://www.openpay.mx/img/github/ios.jpg)
 
+
+![No Maintenance Intended](http://unmaintained.tech/badge.svg)
+
 DEPRECATED`⛔️`
 Please use our Swift library instead: https://github.com/open-pay/openpay-swift-ios
 
