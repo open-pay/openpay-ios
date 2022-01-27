@@ -1,4 +1,4 @@
-![Openpay iOS](http://www.openpay.mx/img/github/ios.jpg)
+![Openpay iOS](https://www.openpay.mx/img/github/ios_new.jpg)
 
 
 ![No Maintenance Intended](http://unmaintained.tech/badge.svg)
